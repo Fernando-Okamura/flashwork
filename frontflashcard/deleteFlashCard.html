@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Flashcard</title>
+</head>
+<body>
+    <h1>Excluir Flashcard</h1>
+
+    <label for="flashCardId">ID do Flashcard a ser excluído:</label>
+    <input type="number" id="flashCardId" placeholder="ID do Flashcard">
+
+    <button onclick="excluirFlashCard()">Excluir Flashcard</button>
+
+    <div id="resultadoExclusao"></div>
+
+    <script>
+        function excluirFlashCard() {
+            var flashCardId = document.getElementById('flashCardId').value;
+
+            if (isNaN(flashCardId) || flashCardId <= 0) {
+                alert("ID inválido. Insira um número positivo.");
+            } else {
+                fetch('http://localhost:8080/excluir/' + flashCardId, {
+                    method: 'DELETE',
+                    credentials: 'include'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Não há necessidade de retornar ou processar o JSON aqui
+                        const resultadoExclusao = document.getElementById('resultadoExclusao');
+                        resultadoExclusao.innerHTML = `<p>Flashcard excluído com sucesso</p>`;
+                    } else {
+                        throw new Error('Erro ao excluir Flashcard');
+                    }
+                })
+                .catch(error => {
+                    const resultadoExclusao = document.getElementById('resultadoExclusao');
+                    resultadoExclusao.innerHTML = `<p>Erro ao excluir Flashcard: ${error.message}</p>`;
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+

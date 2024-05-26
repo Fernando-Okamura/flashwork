@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Flashcards</title>
+</head>
+<body>
+    <h1>Gerenciador de Flashcards</h1>
+
+    <button onclick="getAllFlashCards()">Ver Todos os Flashcards</button>
+    <button onclick="getFlashCardById()">Ver Detalhes do Flashcard</button>
+    <button onclick="createFlashCard()">Criar Flashcard</button>
+    <button onclick="updateFlashCard()">Atualizar Flashcard</button>
+    <button onclick="deleteFlashCard()">Deletar Flashcard</button>
+
+    <script>
+        function getAllFlashCards() {
+            window.location.href = "getAllFlashCards.html";
+        }
+
+        function getFlashCardById() {
+            window.location.href = "getFlashCardById.html";
+        }
+
+        function createFlashCard() {
+            window.location.href = "createFlashCard.html";
+        }
+
+        function updateFlashCard() {
+            window.location.href = "updateFlashCard.html";
+        }
+
+        function deleteFlashCard() {
+            window.location.href = "deleteFlashCard.html";
+        }
+    </script>
+</body>
+</html>
