@@ -1,7 +1,0 @@
-{
-  "name": "flash1",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
