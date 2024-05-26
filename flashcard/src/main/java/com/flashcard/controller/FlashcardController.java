@@ -43,7 +43,7 @@ public class FlashcardController {
                 .orElseGet(() -> new ResponseEntity<>(NOT_FOUND));
     }
 
-    @PostMapping("/cadastrar")
+    @PostMapping("/cadastrar") //cadastro
     public String cadastrarFlashcard(@RequestBody FlashCard flashCard) {
         FlashCard savedFlashcard = flashCardService.createFlashCard(flashCard);
 
