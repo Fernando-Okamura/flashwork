@@ -1,4 +1,0 @@
-# trabalhobackend
-# trabalhobackend
-# flashwork
-# flashwork
